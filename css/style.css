@@ -137,15 +137,6 @@ body {
     padding: 5px 30px 5px 30px;
     border-radius: 10px;
     box-shadow: 0px 0px;
-
-    transition: transform 0.3s ease;
-}
-
-.learn-more-button:hover {
-    transform: translateY(-20px);
-    box-shadow: 10px 10px;
-    transition: transform 0.3s ease;
-
 }
 
 /*Standard content styling*/
@@ -161,8 +152,6 @@ body {
     background-color: #F5F5F5;
     position: relative;
     padding: 20px 20px 50px 20px;
-    border-radius: 60px;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
 }
 
 .content-box div {
@@ -171,8 +160,7 @@ body {
     background-color: #DCDCDC;
     left: auto
     width: 90%;
-    border-radius: 60px;
-    margin: 20px;
+
 }
 
 /* Image coroseul */
@@ -200,17 +188,6 @@ body {
     justify-content: centre;
     flex-direction: column;
 }
-
-#footer-images {
-    display: flex;
-    align-items: center;
-    justify-content: centre;
-    flex-direction: row;
-}
-#footer-images img{
-    margin: 10px;
-}
-
 
 .footer p{
     margin: 3px;
