@@ -1,12 +1,9 @@
 body {
   margin: 0;
-  font-family: Poppins, Karma, Oswald;
+  font-size: 28px;
+  font-family: Arial, Helvetica, sans-serif;
   overflow-x: hidden;
 }
-/*
- Poppins: paragraph
- Oswald: Nav
- */
 
 .header {
   display: flex;
@@ -30,10 +27,9 @@ body {
     border-radius: 10px;
     width: 95%;
     margin: auto;
-    background-color: #2740B0;
+    background-color: RGB(100, 100, 100);
     height: 68px;
     z-index: 999;
-    font-family: Oswald;
 }
 
 #navbar img{
@@ -49,9 +45,10 @@ body {
   color: #f2f2f2;
   text-align: center;
   margin: 0px 50px;
-  padding: 4px 40px;
+  padding: 14px 40px;
   text-decoration: none;
-  font-size: 45px;
+  font-size: 40px;
+  font-weight: bold;
 }
 
 #navbar a:hover {
@@ -68,97 +65,35 @@ body {
 
 .content {
 	background-color: RGB(255, 255, 255);
+	display: flex;
+	flex-direction: column;
     text-align: center;
     padding: 10px;
     padding-top: 130px;
-    display: flex;
-	flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
 
-#top-text{
-    padding: 0px 200px;
-}
-
-#top-text p {
-    font-size: 35px;
-    font-family: Poppins;
-}
-
-.section {
-    margin-top: 50px;
-    background-color: rgb(200, 200, 200);
-    padding-bottom: 5%;
-}
-
-.section h1 {
-    font-family: Oswald;
-}
-
-/* Button for collapsing div */
-.toggleButton {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    padding: 20px 20px;
-    background-color: rgba(0, 0, 0, 0);
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 50px;
-    font-weight: bold;
-}
-
-/* collapsed div */
-.collapse {
-    position: relative;
-    margin-top: 50px;
-    width: 100%;
-    background-color: rgb(200, 200, 200);
-    height: auto;
-}
-
-.collapse h1 {
-    font-family: Oswald;
-}
-
-.collapse div {
-    display: none;
-}
-
-/* un-collapsed div */
-.collapsed {
-    position: relative;
-    display: block;
-    margin-top: 50px;
-    background-color: rgb(200, 200, 200);
-    padding-bottom: 20px;
-    height: auto;
-}
-
-.collapsed h1 {
-    font-family: Oswald;
+.content p {
+    font-size: 30px;
 }
 
 /* Activities display styling */
-/*Grid container for all activities*/
+/*Grid container for activities*/
 #activities-container{
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: 400px 400px;
   /*background-color: #A9A9A9;*/
   margin: 20px;
-
 }
 
-/* Grid class for each activity */
+/*Gid class for each activity*/
 .activity-container {
   background-color: gray;
   display: grid;
   grid-template-columns: 90% 10%;
   grid-template-rows: auto;
   margin: 10px;
+
 }
 
 .activity-container:hover {
@@ -183,124 +118,78 @@ body {
 /*Text half of the activity container*/
 .activities-text{
     overflow: hidden;
+    background-color: #F5F5F5;
+    color: #F5F5F5;
+
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: centre;
     flex-direction: column;
-    color: transparent;
+
 }
 
-.activity-container:hover .activities-text {
+.activity-container:hover .activities-text  {
     color: black;
 }
 
-.activities-text p {
-    font-family: Poppins;
-    font-size: 20px;
-}
-/* Learn more button */
 .learn-more-button {
-    visibility: hidden; /* Stays hidden by default */
+    background-color: #787878;
+    padding: 5px 30px 5px 30px;
     border-radius: 10px;
-    background-color: #475FDD;
-    transition: transform 0.3s ease;
-    color: white;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px 20px;
-    text-align: center;
-}
-
-.activity-container:hover .learn-more-button {
-    visibility: visible; /* visible when activity is hovered */
-}
-
-.learn-more-button p {
-    font-family: Poppins;
-    font-size: 20px;
-}
-
-.learn-more-button:hover {
-    transform: translateY(-10px);
-    box-shadow: 10px 10px;
-    transition: transform 0.3s ease;
+    box-shadow: 0px 0px;
 }
 
 /*Standard content styling*/
 
-/* Colorful box */
+.section {
+    margin-top: 50px;
+    background-color: rgb(200, 200, 200);
+}
+
 .content-box {
     text-align: left;
     width: 35%;
+    background-color: #F5F5F5;
     position: relative;
     padding: 20px 20px 50px 20px;
-    border-radius: 60px;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
-    font-size: 16px;
 }
 
-/* Second inline div */
 .content-box div {
     padding: 50px;
     margin-top: 20px;
-    background-color: RGBA(255, 255, 255, 0.4);
+    background-color: #DCDCDC;
     left: auto
     width: 90%;
-    border-radius: 60px;
-    margin: 20px;
+
 }
 
-/* Image carousel */
+/* Image coroseul */
 
 .image-carousel{
     width: 100%;
-    height: auto;
-    background-color: rgba(0, 0, 0, 0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.image-carousel img {
-    width: 80%;
+    height: 80%;
+    background-image: URL("https://placehold.co/3000x1000");
+    background-repeat: no-repeat;
 }
 
 /* Footer */
 .footer{
-	background-color: #282E62;
+	background-color: RGB(233, 233, 233);
 	height: auto;
 	display: grid;
 	grid-template-columns: 50% 50%;
     grid-template-rows: 100%;
     padding: 50px;
-    color: white;
 }
 
-
-.footer div {
+.footer div{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: centre;
     flex-direction: column;
 }
 
-#footer-images {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-}
-
-#footer-images img{
-    margin: 10px;
-}
-
-
-.footer p {
-    font-size: 16px;
-    font-family: Poppins;
+.footer p{
     margin: 3px;
 }
 
