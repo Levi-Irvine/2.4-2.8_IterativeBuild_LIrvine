@@ -1,18 +1,20 @@
 body {
   margin: 0;
-  font-size: 28px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Poppins, Karma, Oswald;
   overflow-x: hidden;
 }
+/*
+ Poppins: paragraph
+ Oswald: Nav
+ */
 
 .header {
   display: flex;
     align-items: center;
     justify-content: center;
-    background-color: yellow;
     height: 80vh;
     margin: -30px;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 90%, rgba(255, 255, 255, 1)), url("https://placehold.co/2880x1104");
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 90%, rgba(255, 255, 255, 1)), url("../images/header.jpg");
     background-size: auto 100%;
     background-repeat: no-repeat;
 }
@@ -27,9 +29,10 @@ body {
     border-radius: 10px;
     width: 95%;
     margin: auto;
-    background-color: RGB(100, 100, 100);
+    background-color: #2740B0;
     height: 68px;
     z-index: 999;
+    font-family: Oswald;
 }
 
 #navbar img{
@@ -45,15 +48,17 @@ body {
   color: #f2f2f2;
   text-align: center;
   margin: 0px 50px;
-  padding: 14px 40px;
+  padding: 4px 40px;
   text-decoration: none;
-  font-size: 40px;
-  font-weight: bold;
+  font-size: 45px;
+  transition: 0.3s ease;
 }
 
 #navbar a:hover {
     background: rgb(232, 232, 232);
     color: black;
+	transition: 0.3s ease;
+	border-radius: 30px;
 }
 
 #navbar a.active {
@@ -65,35 +70,109 @@ body {
 
 .content {
 	background-color: RGB(255, 255, 255);
-	display: flex;
-	flex-direction: column;
     text-align: center;
     padding: 10px;
     padding-top: 130px;
+    display: flex;
+	flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.content p {
-    font-size: 30px;
+#top-text{
+    padding: 0px 200px;
+}
+
+#top-text p {
+    font-size: 35px;
+    font-family: Poppins;
+}
+
+.section {
+    margin-top: 50px;
+    background-image: URL("../images/section_background.jpg");
+    background-position: top right;
+    padding-bottom: 5%;
+}
+
+
+.section h1 {
+    font-family: Oswald;
+    color: white;
+}
+
+/* Button for collapsing div */
+.toggleButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 20px 20px;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+/* collapsed div */
+.collapse {
+    background-image: URL("../images/section_background.jpg");
+    background-position: top right;
+
+    position: relative;
+    margin-top: 50px;
+    width: 100%;
+    background-color: rgb(200, 200, 200);
+    height: auto;
+}
+
+.collapse h1 {
+    font-family: Oswald;
+    color: white;
+}
+
+.collapse div {
+    display: none;
+}
+
+/* un-collapsed div */
+.collapsed {
+    background-image: URL("../images/section_background.jpg");
+    background-position: top right;
+
+    position: relative;
+    display: block;
+    margin-top: 50px;
+    background-color: rgb(200, 200, 200);
+    padding-bottom: 20px;
+    height: auto;
+}
+
+.collapsed h1 {
+    font-family: Oswald;
+    color: white;
+
 }
 
 /* Activities display styling */
-/*Grid container for activities*/
+/*Grid container for all activities*/
 #activities-container{
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: 400px 400px;
   /*background-color: #A9A9A9;*/
   margin: 20px;
+
 }
 
-/*Gid class for each activity*/
+/* Grid class for each activity */
 .activity-container {
   background-color: gray;
   display: grid;
   grid-template-columns: 90% 10%;
   grid-template-rows: auto;
   margin: 10px;
-
 }
 
 .activity-container:hover {
@@ -118,81 +197,349 @@ body {
 /*Text half of the activity container*/
 .activities-text{
     overflow: hidden;
-    background-color: #F5F5F5;
-    color: #F5F5F5;
-
     display: flex;
     align-items: center;
-    justify-content: centre;
+    justify-content: center;
     flex-direction: column;
-
+    color: transparent;
 }
 
-.activity-container:hover .activities-text  {
+.activity-container:hover .activities-text {
     color: black;
 }
 
+.activities-text p {
+    font-family: Poppins;
+    font-size: 20px;
+}
+/* Learn more button */
 .learn-more-button {
-    background-color: #787878;
-    padding: 5px 30px 5px 30px;
+    visibility: hidden; /* Stays hidden by default */
     border-radius: 10px;
-    box-shadow: 0px 0px;
+    background-color: #475FDD;
+    transition: transform 0.3s ease;
+    color: white;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px;
+    text-align: center;
+}
+
+.activity-container:hover .learn-more-button {
+    visibility: visible; /* visible when activity is hovered */
+}
+
+.learn-more-button p {
+    font-family: Poppins;
+    font-size: 20px;
+}
+
+.learn-more-button:hover {
+    transform: translateY(-10px);
+    box-shadow: 10px 10px;
+    transition: transform 0.3s ease;
 }
 
 /*Standard content styling*/
 
-.section {
-    margin-top: 50px;
-    background-color: rgb(200, 200, 200);
-}
-
+/* Colorful box */
 .content-box {
     text-align: left;
     width: 35%;
-    background-color: #F5F5F5;
     position: relative;
     padding: 20px 20px 50px 20px;
+    border-radius: 60px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+    font-size: 16px;
+    background-size: 100%;
 }
 
+/* Second inline div */
 .content-box div {
-    padding: 50px;
+    padding: 25px;
     margin-top: 20px;
-    background-color: #DCDCDC;
+    background-color: RGBA(255, 255, 255, 0.4);
     left: auto
     width: 90%;
-
+    border-radius: 60px;
+    margin: 20px;
 }
 
-/* Image coroseul */
+#group-links {
+    display: inline-block;
+}
+
+/* Styling for home page div */
+
+#not-allowed {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+#not-allowed img {
+    margin-left: 100px;
+    margin-right: 100px;
+    height: 50px;
+    width: 50px;
+}
+
+
+/* details for index page */
+#details {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
+}
+
+#details section p {
+    display: inline-block;
+}
+
+#details section img {
+    height: 50px;
+    width: 50px;
+}
+
+/* Image carousel */
 
 .image-carousel{
     width: 100%;
-    height: 80%;
-    background-image: URL("https://placehold.co/3000x1000");
-    background-repeat: no-repeat;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-carousel img {
+    width: 80%;
 }
 
 /* Footer */
 .footer{
-	background-color: RGB(233, 233, 233);
+	background-color: #282E62;
 	height: auto;
 	display: grid;
 	grid-template-columns: 50% 50%;
     grid-template-rows: 100%;
     padding: 50px;
+    color: white;
 }
 
-.footer div{
+
+.footer div {
     display: flex;
     align-items: center;
-    justify-content: centre;
+    justify-content: center;
     flex-direction: column;
 }
 
-.footer p{
+#footer-images {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+#footer-images img{
+    margin: 10px;
+    height: 75px;
+    width: 75px;
+    filter: invert(1);
+
+}
+
+
+.footer p {
+    font-size: 16px;
+    font-family: Poppins;
     margin: 3px;
 }
 
+.footer a {
+    color: white;
+}
+
+/* fonts */
 h1 {
   font-size: 40px;
+}
+
+.car_img{
+    top: 50%;
+}
+
+
+/* IMAGE CAROUSEL */
+.CSSgal {
+	position: relative;
+	overflow: hidden;
+	height: 30%; /* Or set a fixed height */
+}
+
+/* SLIDER */
+
+.CSSgal .slider {
+	height: 100%;
+	white-space: nowrap;
+	font-size: 0;
+	transition: 0.8s;
+}
+
+/* SLIDES */
+
+.CSSgal .slider > * {
+	font-size: 1rem;
+	display: inline-block;
+	white-space: normal;
+	vertical-align: top;
+	height: 100%;
+	width: 100%;
+	background: none 50% no-repeat;
+	background-size: cover;
+}
+
+/* PREV/NEXT, CONTAINERS & ANCHORS */
+
+.CSSgal .prevNext {
+	position: absolute;
+	z-index: 1;
+	top: 50%;
+	width: 100%;
+	height: 0;
+}
+
+.CSSgal .prevNext > div+div {
+	visibility: hidden; /* Hide all but first P/N container */
+}
+
+.CSSgal .prevNext a {
+	background: #fff;
+	position: absolute;
+	width:       60px;
+	height:      60px;
+	line-height: 60px; /* If you want to place numbers */
+	text-align: center;
+	opacity: 0.7;
+	-webkit-transition: 0.3s;
+					transition: 0.3s;
+	-webkit-transform: translateY(-50%);
+					transform: translateY(-50%);
+	left: 0;
+}
+.CSSgal .prevNext a:hover {
+	opacity: 1;
+}
+.CSSgal .prevNext a+a {
+	left: auto;
+	right: 0;
+}
+
+/* NAVIGATION */
+
+.CSSgal .bullets {
+	position: absolute;
+	z-index: 2;
+	bottom: 0;
+	padding: 10px 0;
+	width: 100%;
+	text-align: center;
+}
+.CSSgal .bullets > a {
+	display: inline-block;
+	width:       30px;
+	height:      30px;
+	line-height: 30px;
+	text-decoration: none;
+	text-align: center;
+	background: rgba(255, 255, 255, 1);
+	-webkit-transition: 0.3s;
+					transition: 0.3s;
+}
+.CSSgal .bullets > a+a {
+	background: rgba(255, 255, 255, 0.5); /* Dim all but first */
+}
+.CSSgal .bullets > a:hover {
+	background: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* NAVIGATION BUTTONS */
+/* ALL: */
+.CSSgal >s:target ~ .bullets >* {      background: rgba(255, 255, 255, 0.5);}
+/* ACTIVE */
+#s1:target ~ .bullets >*:nth-child(1) {background: rgba(255, 255, 255,   1);}
+#s2:target ~ .bullets >*:nth-child(2) {background: rgba(255, 255, 255,   1);}
+#s3:target ~ .bullets >*:nth-child(3) {background: rgba(255, 255, 255,   1);}
+#s4:target ~ .bullets >*:nth-child(4) {background: rgba(255, 255, 255,   1);}
+/* More slides? Add here more rules */
+
+/* PREV/NEXT CONTAINERS VISIBILITY */
+/* ALL: */
+.CSSgal >s:target ~ .prevNext >* {      visibility: hidden;}
+/* ACTIVE: */
+#s1:target ~ .prevNext >*:nth-child(1) {visibility: visible;}
+#s2:target ~ .prevNext >*:nth-child(2) {visibility: visible;}
+#s3:target ~ .prevNext >*:nth-child(3) {visibility: visible;}
+#s4:target ~ .prevNext >*:nth-child(4) {visibility: visible;}
+/* More slides? Add here more rules */
+
+/* SLIDER ANIMATION POSITIONS */
+
+#s1:target ~ .slider {transform: translateX(   0%); -webkit-transform: translateX(   0%);}
+#s2:target ~ .slider {transform: translateX(-100%); -webkit-transform: translateX(-100%);}
+#s3:target ~ .slider {transform: translateX(-200%); -webkit-transform: translateX(-200%);}
+#s4:target ~ .slider {transform: translateX(-300%); -webkit-transform: translateX(-300%);}
+/* More slides? Add here more rules */
+
+
+/* YOU'RE THE DESIGNER!
+   ____________________
+   All above was mainly to get it working :)
+   CSSgal CUSTOM STYLES / OVERRIDES HERE: */
+
+.CSSgal{
+	color: #fff;
+	text-align: center;
+}
+.CSSgal .slider h2 {
+	margin-top: 40vh;
+	font-weight: 200;
+	letter-spacing: -0.06em;
+	word-spacing: 0.2em;
+	font-size: 5em;
+	background-color: rgba(0, 0, 0, 0.5);
+
+}
+.CSSgal a {
+	border-radius: 50%;
+	margin: 0 3px;
+	color: rgba(0,0,0,0.8);
+	text-decoration: none;
+}
+
+
+/* Back to top button code */
+
+#myBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: red; /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+}
+
+#myBtn:hover {
+  background-color: #555; /* Add a dark-grey background on hover */
 }
